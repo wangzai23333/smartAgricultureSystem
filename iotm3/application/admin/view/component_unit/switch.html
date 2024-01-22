@@ -1,0 +1,205 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+<input type="hidden" value="{$id}" id="sid">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关1:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status1_0" name="row[onoff1]" type="radio" value="0" {if $info.onoff1==0||empty($list[1])} checked {/if} /> 关闭</label> 
+           <label ><input id="status1_1" name="row[onoff1]" type="radio" value="1"  {if $info.onoff1 == 1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关2:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status2_0" name="row[onoff2]" type="radio" value="0" {if $info.onoff2==0||empty($info.onoff2)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status2_1" name="row[onoff2]" type="radio" value="1"  {if $info.onoff2==1} checked {/if} />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关3:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status3_0" name="row[onoff3]" type="radio" value="0" {if $info.onoff3==0||empty($info.onoff3)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status3_1" name="row[onoff3]" type="radio" value="1"  {if $info.onoff3==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关4:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status4_0" name="row[onoff4]" type="radio" value="0" {if $info.onoff4==0||empty($info.onoff4)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status4_1" name="row[onoff4]" type="radio" value="1" {if $info.onoff4==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关5:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status5_0" name="row[onoff5]" type="radio" value="0" {if $info.onoff5==0||empty($info.onoff4)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status5_1" name="row[onoff5]" type="radio" value="1" {if $info.onoff5==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+ 
+<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关6:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status6_0" name="row[onoff6]" type="radio" value="0" {if $info.onoff6==0||empty($info.onoff6)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status6_1" name="row[onoff6]" type="radio" value="1" {if $info.onoff6==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关7:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status7_0" name="row[onoff7]" type="radio" value="0" {if $info.onoff7==0||empty($info.onoff7)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status7_1" name="row[onoff7]" type="radio" value="1" {if $info.onoff7==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+<div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关8:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status8_0" name="row[onoff8]" type="radio" value="0" {if $info.onoff8==0||empty($info.onoff8)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status8_1" name="row[onoff8]" type="radio" value="1" {if $info.onoff8==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关9:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status9_0" name="row[onoff9]" type="radio" value="0" {if $info.onoff9==0||empty($info.onoff9)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status9_1" name="row[onoff9]" type="radio" value="1" {if $info.onoff9==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+ <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关10:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status10_0" name="row[onoff10]" type="radio" value="0" {if $info.onoff10==0||empty($info.onoff10)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status10_1" name="row[onoff10]" type="radio" value="1" {if $info.onoff10==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+ <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关11:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status11_0" name="row[onoff11]" type="radio" value="0" {if $info.onoff11==0||empty($info.onoff11)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status11_1" name="row[onoff11]" type="radio" value="1" {if $info.onoff11==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关12:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status12_0" name="row[onoff12]" type="radio" value="0" {if $info.onoff12==0||empty($info.onoff12)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status12_1" name="row[onoff12]" type="radio" value="1" {if $info.onoff12==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关13:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status13_0" name="row[onoff13]" type="radio" value="0" {if $info.onoff13==0||empty($info.onoff13)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status13_1" name="row[onoff13]" type="radio" value="1" {if $info.onoff13==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+ <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关14:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status14_0" name="row[onoff14]" type="radio" value="0" {if $info.onoff14==0||empty($info.onoff14)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status14_1" name="row[onoff14]" type="radio" value="1" {if $info.onoff14==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关15:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status15_0" name="row[onoff15]" type="radio" value="0" {if $info.onoff15==0||empty($info.onoff15)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status15_1" name="row[onoff15]" type="radio" value="1" {if $info.onoff15==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">开关16:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label ><input id="status16_0" name="row[onoff16]" type="radio" value="0" {if $info.onoff16==0||empty($info.onoff16)} checked {/if}   /> 关闭</label> 
+           <label ><input id="status16_1" name="row[onoff16]" type="radio" value="1" {if $info.onoff16==1} checked {/if}  />打开</label> 
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+

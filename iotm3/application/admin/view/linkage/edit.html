@@ -1,0 +1,529 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+  <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Weigh')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-weigh" data-rule="required" class="form-control" name="row[weigh]" type="number" value="{$row.weigh|htmlentities}">
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">标题:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" data-rule="required" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Referenceid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+         <input type="hidden"  id="rcalculation"  name="row[rcalculation]" type="text" value="{$rdata.calculation}">
+         <input type="hidden"  id="rdid"  name="row[rdid]" type="text" value="{$rdata.did}">
+         <input type="hidden"  id="rfixedvalue"  name="row[rfixedvalue]" type="text" value="{$rdata.fixedvalue}">
+         <input type="hidden"  id="rgroupid"  name="row[rgroupid]" type="text" value="{$rdata.groupid}">
+         <input type="hidden"  id="rrtype"  name="row[rrtype]" type="text" value="{$rdata.rtype}">
+         <input type="hidden"  id="rsensor"  name="row[rsensor]" type="text" value="{$rdata.sensorid}">
+         <input type="hidden"  id="runitlabel"  name="row[runitlabel]" type="text" value="{$rdata.unitlabel}">
+         <button  type="button" id="referenceidChange" class="btn btn-success btn-embossed">重新选择</button>
+        </div>
+        
+       
+    </div>
+  
+    
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">区间:</label>
+        <div class="col-xs-12 col-sm-8">
+           [
+         <input type="hidden"  id="mcalculation"  name="row[mcalculation]" type="text" value="{$mindata.calculation}">
+         <input type="hidden"  id="mdid"  name="row[mdid]" type="text" value="{$mindata.did}">
+         <input type="hidden"  id="mfixedvalue"  name="row[mfixedvalue]" type="text" value="{$mindata.fixedvalue}">
+         <input type="hidden"  id="mgroupid"  name="row[mgroupid]" type="text" value="{$mindata.groupid}">
+         <input type="hidden"  id="mrtype"  name="row[mrtype]" type="text" value="{$mindata.rtype}">
+         <input type="hidden"  id="msensor"  name="row[msensor]" type="text" value="{$mindata.sensorid}">
+         <input type="hidden"  id="munitlabel"  name="row[munitlabel]" type="text" value="{$mindata.unitlabel}">
+         <button  type="button" id="minidChange" class="btn btn-success btn-embossed">重新选择</button>
+       ,
+         <input type="hidden"  id="maxcalculation"  name="row[maxcalculation]" type="text" value="{$maxdata.calculation}">
+         <input type="hidden"  id="maxdid"  name="row[maxdid]" type="text" value="{$maxdata.did}">
+         <input type="hidden"  id="maxfixedvalue"  name="row[maxfixedvalue]" type="text" value="{$maxdata.fixedvalue}">
+         <input type="hidden"  id="maxgroupid"  name="row[maxgroupid]" type="text" value="{$maxdata.groupid}">
+         <input type="hidden"  id="maxrtype"  name="row[maxrtype]" type="text" value="{$maxdata.rtype}">
+         <input type="hidden"  id="maxsensor"  name="row[maxsensor]" type="text" value="{$maxdata.sensorid}">
+         <input type="hidden"  id="maxunitlabel"  name="row[maxunitlabel]" type="text" value="{$maxdata.unitlabel}">
+         <button  type="button" id="maxidChange" class="btn btn-success btn-embossed">重新选择</button>
+         )
+       
+        </div>
+    </div>
+  
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Did')}:</label>
+        <div class="col-xs-12 col-sm-8">
+         <select  id="c-did" data-rule="required" class="form-control selectpicker" name="row[did]">
+                {foreach name="unitlist" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.did"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Switchnum')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select class="form-control selectpicker" id="c-switchnum" name="row[switchnum]">
+       <option value='1' {if $row.switchnum == 1}selected{/if}>1</option>
+       <option value='2' {if $row.switchnum == 2}selected{/if}>2</option>
+       <option value='3'{if $row.switchnum == 3}selected{/if}>3</option>
+       <option value='4'{if $row.switchnum == 4}selected{/if}>4</option>
+             <option value='5' {if $row.switchnum == 5}selected{/if}>5</option>
+       <option value='6' {if $row.switchnum == 6}selected{/if}>6</option>
+       <option value='7'{if $row.switchnum == 7}selected{/if}>7</option>
+       <option value='8'{if $row.switchnum == 8}selected{/if}>8</option>
+             <option value='9' {if $row.switchnum == 9}selected{/if}>9</option>
+       <option value='10' {if $row.switchnum == 10}selected{/if}>10</option>
+       <option value='11'{if $row.switchnum == 11}selected{/if}>11</option>
+       <option value='12'{if $row.switchnum == 12}selected{/if}>12</option>
+             <option value='13' {if $row.switchnum == 13}selected{/if}>13</option>
+       <option value='14' {if $row.switchnum == 14}selected{/if}>14</option>
+       <option value='15'{if $row.switchnum == 15}selected{/if}>15</option>
+       <option value='16'{if $row.switchnum == 16}selected{/if}>16</option>
+       </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Onoff')}:</label>
+        <div class="col-xs-12 col-sm-8">
+                        
+            <select  id="c-onoff" data-rule="required" class="form-control selectpicker" name="row[onoff]">
+                {foreach name="onoffList" item="vo"}
+                    <option value="{$key}" {in name="key" value="$row.onoff"}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Keeptime')}:</label>
+        <div class="col-xs-12 col-sm-8" style="line-height: 30px;">
+            <input id="c-keeptime" style="width: 36%;" data-rule="required" class="form-control"  name="row[keeptime]" type="number" value="{$row.keeptime|htmlentities}">
+        分钟
+        <div style="color: #e74c3c;">保持为0不自动关闭</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Delaytime')}:</label>
+        <div class="col-xs-12 col-sm-8" style="line-height: 30px;">
+            <input id="c-delaytime" style="width: 36%;" data-rule="required" class="form-control"  name="row[delaytime]" type="number" value="{$row.delaytime|htmlentities}">
+        分钟
+         <div style="color: #e74c3c;">延迟为0时，任务是默认15秒进行检查</div>
+        </div>
+    </div>
+
+  <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">运行方式:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label><input id="row[operationWay]-polling" name="row[operationWay]" type="radio" value="task" {if $row.operationWay == 'task'}checked{/if} />网络(任务)</label> 
+           <label><input id="row[operationWay]-task" name="row[operationWay]" type="radio" value="local" {if $row.operationWay == 'local'}checked{/if} />本地</label> 
+            </div>
+        </div>
+    </div>
+
+
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">禁用:</label>
+        <div class="col-xs-12 col-sm-8">
+            
+            <div class="radio">
+            <label><input id="row[forbidden]-1" name="row[forbidden]" type="radio" value="1" {if $row.forbidden == 1}checked{/if} />是</label> 
+           <label><input id="row[forbidden]-0" name="row[forbidden]" type="radio" value="0" {if $row.forbidden == 0}checked{/if} />否</label> 
+            </div>
+        </div>
+    </div>
+    
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">禁用时间段:</label>
+        <div class="col-xs-12 col-sm-8" style="    display: flex;">
+                <input type="text"
+                        name="row[startban]"
+                        class="form-control datetimepicker"
+                        data-date-format="HH:ss"
+                        value="{$row.startban}"
+                         />
+                        <span style="margin: 0 10px;">-</span>
+                    <input type="text"
+                        name="row[endban]"
+                        class="form-control datetimepicker"
+                        data-date-format="HH:ss"
+                        value="{$row.endban}" />
+                       、
+        </div>
+                                  <div style="color: #e74c3c;">只在网络模式下有效</div>
+        
+    </div>
+    
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8" >
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>
+<script src="/assets/js/jquery.3.4.1.min.js"></script>
+<script src="/assets/js/layer/layer.js"></script>
+<script>
+    var index = parent.layer.getFrameIndex(window.name);
+
+      
+    
+    $("#referenceidChange").on("click",function(){
+        ids = $("#ids").val();
+        layer.open({
+            type: 2,
+            title: '选择值',
+            shadeClose: true,
+            shade: 0.9,
+            area: ['80%', '80%'],
+            content: "/{$url}/notice/addRange",
+            btn: ['确定','关闭'],
+            success: function(layero, index){
+                var body=layer.getChildFrame('body',index);//少了这个是不能从父页面向子页面传值的
+    　　　　　　　if($('#rrtype').val()!=''){
+    			//获取子页面的元素，进行数据渲染
+    			body.contents().find('#c-rtype').val($('#rrtype').val());
+    			switch($('#rrtype').val()){
+    			case '1':
+					body.contents().find('#c-fixedvalue').val($('#rfixedvalue').val());
+					body.contents().find('#c-unitlabel').val($('#runitlabel').val());
+					body.contents().find('#type_2').hide();
+					body.contents().find('#type_1').show();
+					body.contents().find('#type_3').hide();
+					body.contents().find('#type_4').hide();
+					body.contents().find('#label').show();
+					break;
+				case '2':
+					window["layui-layer-iframe" + index].getSensorList($('#rdid').val());
+					body.contents().find('#c-did').val($('#rdid').val());
+					body.contents().find('#c-did').change();
+					body.contents().find('#c-sensor').val($('#rsensor').val());
+					body.contents().find('#c-unitlabel').val($('#runitlabel').val());
+					body.contents().find('#type_1').hide();
+					body.contents().find('#type_2').show();
+					body.contents().find('#type_3').hide();
+					body.contents().find('#type_4').hide();
+					body.contents().find('#label').show();
+					break;
+				case '3':
+					body.contents().find('#c-groupid').val($('#rgroupid').val());
+					body.contents().find('#c-calculation').val($('#rcalculation').val());
+					body.contents().find('#c-unitlabel').val($('#runitlabel').val());
+					body.contents().find('#type_2').hide();
+					body.contents().find('#type_3').show();
+					body.contents().find('#type_1').hide();
+					body.contents().find('#type_4').hide();
+					body.contents().find('#label').show();
+					break;
+				case '4':
+					body.contents().find('#type_2').hide();
+					body.contents().find('#type_3').hide();
+					body.contents().find('#type_1').hide();
+					body.contents().find('#label').hide();
+					body.contents().find('#type_4').show();
+					body.contents().find('#c-ldid').val($('#rdid').val());
+					break;
+    				case '0':
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').hide();
+    					break;
+    			}
+    　　　　　　　}
+            },
+            yes: function(index){
+            	 var res = window["layui-layer-iframe" + index].callBack();
+            	 if(res.rtype){
+            		 if(res.rtype == 0){
+            			     Layer.alert('参考值不能为空', {
+                                title: __('Warning'),
+                                btn: ['确认']
+                            
+                            });
+            			 return;
+            		 }
+            		 if(res.rtype == 1){
+        			     Layer.alert('参考值不能为值', {
+                            title: __('Warning'),
+                            btn: ['确认']
+                        
+                        });
+        			 return;
+        		 }
+            		 if(( res.rtype == 2 || res.rtype == 3) && res.unitlabel == ''){
+            			     Layer.alert('标签不能为空', {
+                                title: __('Warning'),
+                                btn: ['确认']
+                            
+                            });
+            			 return;
+            		 }
+            	 	$('#rrtype').val(res.rtype);
+            		$('#rfixedvalue').val('');
+            	 	$('#rcalculation').val('');
+            	 	$('#rdid').val('');
+            	 	$('#rgroupid').val('');
+            	 	$('#rsensor').val('');
+            		$('#runitlabel').val('');
+            
+            	 switch(res.rtype){
+            	 	case '1':
+            	 	$('#rfixedvalue').val(res.fixedvalue);
+            	 	$('#runitlabel').val(res.unitlabel);
+            	 	break;
+            		case '2':
+            	 	$('#rdid').val(res.did);
+            		$('#rsensor').val(res.sensor);
+            		$('#runitlabel').val(res.unitlabel);
+            	 	break;
+            		case '3':
+            	 	$('#rgroupid').val(res.groupid);
+            		$('#rcalculation').val(res.calculation);
+            		$('#runitlabel').val(res.unitlabel);
+            	 	break;
+            		case '4':
+                    	$('#rdid').val(res.ldid);
+                        break;
+            	 }
+            	 $("#referenceidChange").text('重新选择');
+            	 }
+            	  layer.close(index);
+            },
+            cancel: function(){
+                //右上角关闭回调
+            }
+        });
+    });
+	
+    $("#minidChange").on("click",function(){
+        ids = $("#ids").val();
+        layer.open({
+            type: 2,
+            title: '选择值',
+            shadeClose: true,
+            shade: 0.9,
+            area: ['80%', '80%'],
+            content: "/{$url}/notice/addRange",
+            btn: ['确定','关闭'],
+            success: function(layero, index){
+                var body=layer.getChildFrame('body',index);//少了这个是不能从父页面向子页面传值的
+    　　　　　　　if($('#mrtype').val()!=''){
+    			//获取子页面的元素，进行数据渲染
+    			body.contents().find('#c-rtype').val($('#mrtype').val());
+    		
+    			switch($('#mrtype').val()){
+    				case '1':
+    					body.contents().find('#c-fixedvalue').val($('#mfixedvalue').val());
+    					body.contents().find('#c-unitlabel').val($('#munitlabel').val());
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_1').show();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '2':
+    					window["layui-layer-iframe" + index].getSensorList($('#mdid').val());
+    					body.contents().find('#c-did').val($('#mdid').val());
+    					body.contents().find('#c-sensor').val($('#msensor').val());
+    					body.contents().find('#c-unitlabel').val($('#munitlabel').val());
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#type_2').show();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '3':
+    					body.contents().find('#c-groupid').val($('#mgroupid').val());
+    					body.contents().find('#c-calculation').val($('#mcalculation').val());
+    					body.contents().find('#c-unitlabel').val($('#munitlabel').val());
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').show();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '4':
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').hide();
+    					break;
+    				case '0':
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').hide();
+    					break;
+    			}
+    　　　　　　　}
+            },
+            yes: function(index){
+            	 var res = window["layui-layer-iframe" + index].callBack();
+            	 if(res.rtype){
+            		 if(res.rtype == 4){
+        			     Layer.alert('最小值不能为离线', {
+                            title: __('Warning'),
+                            btn: ['确认']
+                        
+                        });
+        			 return;
+        		 }
+            		 if(( res.rtype == 2 || res.rtype == 3) && res.unitlabel == ''){
+            			     Layer.alert('标签不能为空', {
+                                title: __('Warning'),
+                                btn: ['确认']
+                            
+                            });
+            			 return;
+            		 }
+            	 	$('#mrtype').val(res.rtype);
+            		$('#mfixedvalue').val('');
+            	 	$('#mcalculation').val('');
+            	 	$('#mdid').val('');
+            	 	$('#mgroupid').val('');
+            	 	$('#msensor').val('');
+            		$('#munitlabel').val('');
+            
+            	 switch(res.rtype){
+            	 	case '1':
+            	 	$('#mfixedvalue').val(res.fixedvalue);
+            	 	$('#munitlabel').val(res.unitlabel);
+            	 	break;
+            		case '2':
+            	 	$('#mdid').val(res.did);
+            		$('#msensor').val(res.sensor);
+            		$('#munitlabel').val(res.unitlabel);
+            	 	break;
+            		case '3':
+            	 	$('#mgroupid').val(res.groupid);
+            		$('#mcalculation').val(res.calculation);
+            		$('#munitlabel').val(res.unitlabel);
+            	 	break;
+            	 }
+            	 $("#minidChange").text('重新选择');
+            	 }
+            	  layer.close(index);
+            },
+            cancel: function(){
+                //右上角关闭回调
+            }
+        }); 
+    });
+    $("#maxidChange").on("click",function(){
+        ids = $("#ids").val();
+        layer.open({
+            type: 2,
+            title: '选择值',
+            shadeClose: true,
+            shade: 0.9,
+            area: ['80%', '80%'],
+            content: "/{$url}/notice/addRange",
+            btn: ['确定','关闭'],
+            success: function(layero, index){
+                var body=layer.getChildFrame('body',index);//少了这个是不能从父页面向子页面传值的
+    　　　　　　　if($('#maxrtype').val()!=''){
+    			//获取子页面的元素，进行数据渲染
+    			body.contents().find('#c-rtype').val($('#maxrtype').val());
+    		
+    			switch($('#maxrtype').val()){
+    				case '1':
+    					body.contents().find('#c-fixedvalue').val($('#maxfixedvalue').val());
+    					body.contents().find('#c-unitlabel').val($('#maxunitlabel').val());
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_1').show();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '2':
+    					window["layui-layer-iframe" + index].getSensorList($('#maxdid').val());
+    					body.contents().find('#c-did').val($('#maxdid').val());
+    					body.contents().find('#c-sensor').val($('#maxsensor').val());
+    					body.contents().find('#c-unitlabel').val($('#maxunitlabel').val());
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#type_2').show();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '3':
+    					body.contents().find('#c-groupid').val($('#maxgroupid').val());
+    					body.contents().find('#c-calculation').val($('#maxcalculation').val());
+    					body.contents().find('#c-unitlabel').val($('#maxunitlabel').val());
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').show();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').show();
+    					break;
+    				case '4':
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').hide();
+    					break;
+    				case '0':
+    					body.contents().find('#type_2').hide();
+    					body.contents().find('#type_3').hide();
+    					body.contents().find('#type_1').hide();
+    					body.contents().find('#label').hide();
+    					break;
+    			}
+    　　　　　　　}
+            },
+            yes: function(index){
+            	 var res = window["layui-layer-iframe" + index].callBack();
+            	 if(res.rtype){
+            		 if(res.rtype == 4){
+        			     Layer.alert('最大值不能为离线', {
+                            title: __('Warning'),
+                            btn: ['确认']
+                        
+                        });
+        			 return;
+        		 }
+            		 if(( res.rtype == 2 || res.rtype == 3) && res.unitlabel == ''){
+            			     Layer.alert('标签不能为空', {
+                                title: __('Warning'),
+                                btn: ['确认']
+                            
+                            });
+            			 return;
+            		 }
+            	 	$('#maxrtype').val(res.rtype);
+            		$('#maxfixedvalue').val('');
+            	 	$('#maxcalculation').val('');
+            	 	$('#maxdid').val('');
+            	 	$('#maxgroupid').val('');
+            	 	$('#maxsensor').val('');
+            		$('#maxunitlabel').val('');
+            
+            	 switch(res.rtype){
+            	 	case '1':
+            	 	$('#maxfixedvalue').val(res.fixedvalue);
+            	 	$('#maxunitlabel').val(res.unitlabel);
+            	 	break;
+            		case '2':
+            	 	$('#maxdid').val(res.did);
+            		$('#maxsensor').val(res.sensor);
+            		$('#maxunitlabel').val(res.unitlabel);
+            	 	break;
+            		case '3':
+            	 	$('#maxgroupid').val(res.groupid);
+            		$('#maxcalculation').val(res.calculation);
+            		$('#maxunitlabel').val(res.unitlabel);
+            	 	break;
+            	 }
+            	 $("#maxidChange").text('重新选择');
+            	 }
+            	  layer.close(index);
+            },
+            cancel: function(){
+                //右上角关闭回调
+            }
+        });
+    });
+    
+</script>

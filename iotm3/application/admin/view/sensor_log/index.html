@@ -1,0 +1,56 @@
+<style>
+    .tab-content > .chart {
+        padding: 10px;
+    }
+    body{
+    background: #8ea8b4;
+    }
+</style>
+
+<!-- Main row -->
+<div class="row" style="margin-bottom:5px;">
+<input type="hidden" id="did" value="{$did}" />
+<input type="hidden" id="sensorText" value="{$sensorText}" />
+    <!-- Left col -->
+    <section class="col-lg-12 connectedSortable">
+    <div>
+          <button style="width: 99px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background-color: #2c3e50;";  id="tosearch"class="btn btn-success btn-embossed">返回选择</button>
+    </div>
+        <!-- Custom tabs (Charts with tabs)-->
+         {foreach name="sensorList" item="vo"}
+        <div class="nav-tabs-custom charts-custom" id="do_{$vo['label']}" style="width: 48%;
+    float: left;
+    margin: 0.5%;border: 2px solid #3c8dbc;    border-top: 0;">
+   <div class="box-header box-solid bg-teal-gradient" style="    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3c8dbc), color-stop(1, #3498db)) !important;
+    margin-bottom: 10px;" >
+                <i class="fa fa-th"></i>
+
+                <h3 class="box-title">{$vo['title']}({$vo['label']})记录</h3>
+
+                <div class="box-tools pull-right">
+                </div>
+            </div>
+            <input type="hidden" id="data_{$vo['id']}" value="{$todayText[$vo['id']]}" />
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+               <li ><a href="#chart_day_{$vo['id']}" data-toggle="tab">7天数据</a></li>
+             <li  class=" active" ><a id="to_{$vo['id']}" href="#chart_today_{$vo['id']}" data-toggle="tab">今天数据</a></li>
+             
+               
+            </ul>
+            <div class="tab-content no-padding">
+                <!-- Morris chart - Sales -->
+                   <div class="chart tab-pane" id="chart_day_{$vo['id']}" style="position: relative; height: 300px;"></div>
+                <div  class="chart tab-pane active" id="chart_today_{$vo['id']}" style="position: relative; height: 300px;"></div>
+             
+            </div>
+        </div>
+       {/foreach}
+
+    </section>
+   
+</div>
+<!-- /.row (main row) -->

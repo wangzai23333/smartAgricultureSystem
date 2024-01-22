@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'Id'                => '编号',
+    'Referenceid'       => '参考值',
+    'Minid'             => '最小值',
+    'Maxid'             => '最大值',
+    'Weigh'             => '排序',
+    'Did'               => '联动组建单元',
+    'Switchnum'         => '联动开关序号',
+    'Onoff'             => '启动状态',
+    'Onoff on'          => '启动',
+    'Onoff off'         => '关闭',
+    'Keeptime'          => '保持时间',
+    'Delaytime'         => '延迟时间',
+    'Createtime'        => '创建时间',
+    'Executiontime'     => '执行持续时间',
+    'Range.id'          => '编号',
+    'Range.rtype'       => '类型',
+    'Range.rtype 1'     => '值',
+    'Range.rtype 2'     => '组建单元某值',
+    'Range.rtype 3'     => '组别',
+    'Range.rtype 4'     => '离线',
+    'Range.groupid'     => '组id',
+    'Range.did'         => '组建单元id',
+    'Range.sensorid'    => '传感器id',
+    'Range.fixedvalue'  => '数值',
+    'Range.calculation' => '计算方式',
+    'Range.unitlabel'   => '标签',
+    'Range.createtime'  => '创建时间'
+];

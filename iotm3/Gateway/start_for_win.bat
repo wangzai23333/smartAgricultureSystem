@@ -1,0 +1,2 @@
+php Applications\iotm\start_register.php Applications\iotm\start_gateway.php Applications\iotm\start_businessworker.php  Applications\other\start_register.php Applications\other\start_gateway.php Applications\other\start_businessworker.php
+pause

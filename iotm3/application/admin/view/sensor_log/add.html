@@ -1,0 +1,40 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Val')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-val" data-rule="required" class="form-control" step="0.001" name="row[val]" type="number" value="0.000">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Sensorid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-sensorid" data-rule="required" class="form-control" name="row[sensorid]" type="number" value="0">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Unitlabel')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-unitlabel" class="form-control" name="row[unitlabel]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Did')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-did" data-rule="required" class="form-control" name="row[did]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Nid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-nid" data-rule="required" class="form-control" name="row[nid]" type="number">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

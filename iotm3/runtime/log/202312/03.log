@@ -1,0 +1,6 @@
+---------------------------------------------------------------
+[ 2023-12-03T00:23:29+08:00 ] 47.106.108.215 POST iotm3.yafrm.com/api/task/checkNotice?id=23
+[ error ] [0]Http request failed! statusCode:0, errno:28, error:Connection timed out after 30000 milliseconds
+---------------------------------------------------------------
+[ 2023-12-03T00:25:06+08:00 ] 47.106.108.215 POST iotm3.yafrm.com/api/task/checkNotice?id=21
+[ error ] [0]Http request failed! statusCode:0, errno:28, error:Connection timed out after 30001 milliseconds

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {include file="common/meta" /}
+        <link href="__CDN__/assets/css/user.css?v={$Think.config.site.version}" rel="stylesheet">
+    </head>
+
+    <body>
+<div id="content-container" class="container" style="    margin-top: -48px;">
+    <div class="user-section login-section">
+        <div class="logon-tab clearfix"><a style="width: 100%;background: #c7dae8;font-size: 2rem;border-bottom: 2px solid #b2c7d3;" class="active">{:__('Sign in')}</a> </div>
+        <div class="login-main">
+            <form name="form" id="login-form" class="form-vertical" method="POST" action="">
+                <div class="form-group">
+                    <label class="control-label" for="account">账号</label>
+                    <div class="controls">
+                        <input class="form-control input-lg" id="account" type="text" name="account" value="" data-rule="required" placeholder="请输入账号" autocomplete="off">
+                        <div class="help-block"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="password">密码</label>
+                    <div class="controls">
+                        <input class="form-control input-lg" id="password" type="password" name="password" data-rule="required;password" placeholder="{:__('Password')}" autocomplete="off">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">{:__('Sign in')}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+ {include file="common/script" /}
+
+    </body>
+
+</html>

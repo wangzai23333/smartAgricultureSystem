@@ -1,0 +1,47 @@
+<style>
+    .tab-content > .chart {
+        padding: 10px;
+    }
+   
+</style>
+
+<!-- Main row -->
+<div class="row" style="margin-bottom:5px;">
+<div style="width: 68%;
+    margin: auto;    margin-top: 30px;">
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-12" style="text-align: center;
+    font-size: 25px;
+    margin-bottom: 16px;
+    color: #18bc9c;">组建单元选择</label>
+      
+    </div>
+ <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <select style="    font-size: 19px;
+    /* height: 88px; */
+    line-height: 37px;
+    max-height: 88px;
+    height: 47px;
+    border: 2px solid #17987f;
+    border-radius: 8px;
+    /* background: #c6dae8; */
+    color:#17987f;" id="did" data-rule="required" class="form-control selectpicker" name="row[did]">
+                {foreach name="unitlist" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+     <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-0"></label>
+        <div class="col-xs-12 col-sm-12" style="text-align: center;">
+         <button style="    width: 170px;
+    font-size: 19px;
+    margin-top: 45px;";  id="search"class="btn btn-success btn-embossed">数据查询</button>
+        </div>
+    </div>
+   </div>
+</div>
+<!-- /.row (main row) -->

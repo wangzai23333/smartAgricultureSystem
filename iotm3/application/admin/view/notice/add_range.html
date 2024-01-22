@@ -1,0 +1,208 @@
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">类型:</label>
+        <div class="col-xs-12 col-sm-8">
+       <select class="form-control selectpicker" id="c-rtype">
+       <option value='0'>为空</option>
+       <option value='1'>数值</option>
+       <option value='2'>组建单元下某值</option>
+       <option value='3'>组别</option>
+       <option value='4'>离线</option>
+       </select>
+        </div>
+        
+        
+    </div>
+    <div id="type_1" style="display:none;">
+    
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">数值:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-fixedvalue" data-rule="required"  class="form-control" name="row[fixedvalue]" type="number" value="0">
+        </div>
+    </div>
+     
+    </div>
+       <div id="type_2" style="display:none;">
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">组建单元:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-did" data-rule="required" class="form-control selectpicker" name="row[did]">
+                {foreach name="unitlist" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">传感器:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-sensor" data-rule="required" class="form-control selectpicker" name="row[sensor]">
+              
+            </select>
+        </div>
+    </div>
+   
+    </div>
+    <div id="type_3" style="display:none;">
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">组别:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-groupid" data-rule="required" class="form-control selectpicker" name="row[groupid]">
+                {foreach name="grouplist" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">计算方式:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-calculation" data-rule="required" class="form-control selectpicker" name="row[calculation]">
+                  <option value='avg'>平均</option>
+      			 <option value='stddev'>方差</option>
+      			 <option value='min'>最小值</option>
+       			<option value='max'>最大值</option>
+            </select>
+        </div>
+    </div>
+    
+    </div>
+           <div id="type_4" style="display:none;">
+        <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">组建单元:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select  id="c-ldid" data-rule="required" class="form-control selectpicker" name="row[did]">
+                {foreach name="unitlist" item="vo"}
+                    <option value="{$key}" {in name="key" value=""}selected{/in}>{$vo}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+   
+   
+    </div>
+    
+    
+ 
+    <div class="form-group" id="label" style="display:none;">
+        <label class="control-label col-xs-12 col-sm-2">标签:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-unitlabel" data-rule="required"  class="form-control" name="row[unitlabel]" type="text" value="">
+        </div>
+    </div>
+    
+    
+  
+ 
+</form>
+<script src="/assets/js/jquery.3.4.1.min.js"></script>
+<script>
+var sensorList = new Array();
+function getSensorList(did){
+	 sensorList =  new Array();
+	 $.ajax({
+         url: "/{$url}/notice/getSensorList",
+         type: "get",
+         data:{
+        	 'did':did
+         },
+         dataType: "json",
+         async: false,
+         success: function (result) {
+             if(result.code == '1')
+             {
+            	 var option = '';
+            	if(result.data.length>0){
+            		 $('#c-sensor').html('');
+            		 $('#c-sensor').val('');
+                for(var i in result.data){
+                	option +='<option  value="'+result.data[i].id+'">'+result.data[i].title+'('+result.data[i].label+')</option>'; 
+                	sensorList[result.data[i].id] = result.data[i].label;
+                }
+                $('#c-sensor').append(option);
+            	}else{
+            		alert('暂无传感器');
+            	}
+                
+             }
+             
+         }
+     });
+}
+getSensorList($('#c-did').val());
+$('#c-did').change(function(){
+	if($('#c-rtype').val() !=4){
+	getSensorList($('#c-did').val());
+	}
+	
+});
+$('#c-sensor').change(function(){
+	var val = $('#c-sensor').val();
+	$('#c-unitlabel').val(sensorList[val]);
+});
+
+$('#c-rtype').change(function(){
+	var val = $('#c-rtype').val();
+	switch(val){
+	case '0':
+		$('#type_1').hide();
+		$('#type_2').hide();
+		$('#type_3').hide();
+		$('#type_4').hide();
+		$('#label').hide();
+		break;
+	case '1':
+		$('#type_1').show();
+		$('#type_2').hide();
+		$('#type_3').hide();
+		$('#type_4').hide();
+		$('#label').hide();
+		break;
+	case '2':
+		$('#type_1').hide();
+		$('#type_2').show();
+		$('#type_3').hide();
+		$('#type_4').hide();
+		$('#label').show();
+		break;
+	case '3':
+		$('#type_1').hide();
+		$('#type_2').hide();
+		$('#type_3').show();
+		$('#type_4').hide();
+		$('#label').show();
+		break;
+	case '4':
+		$('#type_1').hide();
+		$('#type_2').hide();
+		$('#type_3').hide();
+		$('#type_4').show();
+		$('#label').hide();
+		break;
+	}
+	
+	
+	
+});
+
+function callBack(){
+	
+	var data = {
+			rtype : $('#c-rtype').val(),
+			fixedvalue : $('#c-fixedvalue').val(),
+			did:$('#c-did').val(),
+			sensor:$('#c-sensor').val(),
+			groupid:$('#c-groupid').val(),
+			calculation:$('#c-calculation').val(),
+			unitlabel:$('#c-unitlabel').val(),
+			ldid:$('#c-ldid').val()
+	    };
+	    return data;
+}
+
+</script>
+
+
+

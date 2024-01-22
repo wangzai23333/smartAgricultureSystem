@@ -1,0 +1,24 @@
+<form id="adjust-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+ {foreach name="list" item="vo"}
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{$vo['label']}:</label>
+         <div class="col-xs-12 col-sm-2">
+             <select class="form-control selectpicker" name="row[{$vo['label']}][change_type]">
+                <option value="ratio"  {if $adjustVal[$vo['label']]['change_type'] == 'ratio'}selected{/if}>比例</option>
+                <option   value="value" {if $adjustVal[$vo['label']]['change_type'] == 'value'}selected{/if}>值</option>
+            </select> </div>
+        <div class="col-xs-12 col-sm-6">
+ <input id="c-title"   class="form-control" name="row[{$vo['label']}][change_value]" type="text" value="{$adjustVal[$vo['label']]['change_value']}">
+        </div>
+    </div>
+     {/foreach}
+      
+    
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

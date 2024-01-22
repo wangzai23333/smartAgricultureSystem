@@ -1,0 +1,3 @@
+---------------------------------------------------------------
+[ 2023-09-04T17:04:36+08:00 ] 47.106.108.215 POST iotm3.yafrm.com/api/task/checkNotice?id=20
+[ error ] [2006]SQLSTATE[HY000] [2006] MySQL server has gone away
